@@ -1,5 +1,6 @@
 using System;
 
+
 namespace MultiChannelSalesSync.Models
 {
     public class Transaction

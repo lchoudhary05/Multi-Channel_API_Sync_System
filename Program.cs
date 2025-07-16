@@ -11,6 +11,7 @@ builder.Services.AddSingleton<AmazonService>();
 builder.Services.AddSingleton<InventoryService>();
 builder.Services.AddSingleton<AccountingService>();
 builder.Services.AddSingleton<LoggerService>();
+builder.Services.AddSingleton<MongoDbContext>();
 builder.Services.AddControllers();
 
 var app = builder.Build();
