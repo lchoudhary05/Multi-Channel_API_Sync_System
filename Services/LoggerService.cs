@@ -1,5 +1,6 @@
 using MongoDB.Driver;
 using MultiChannelSalesSync.Models;
+using MultiChannelSalesSync.Interfaces;
 using System;
 
 namespace MultiChannelSalesSync.Services
