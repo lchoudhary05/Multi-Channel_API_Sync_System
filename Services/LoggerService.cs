@@ -4,7 +4,7 @@ using System;
 
 namespace MultiChannelSalesSync.Services
 {
-    public class LoggerService
+    public class LoggerService : ILoggerService
     {
         private readonly IMongoCollection<LogEntry> _logs;
 
@@ -13,7 +13,7 @@ namespace MultiChannelSalesSync.Services
             _logs = context.GetCollection<LogEntry>("logs");
         }
 
-        public void LogInfo(string message, object data = null)
+        public void LogInfo(string message, object? data = null)
         {
             var entry = new LogEntry
             {

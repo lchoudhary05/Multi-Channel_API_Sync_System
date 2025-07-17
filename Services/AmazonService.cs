@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MultiChannelSalesSync.Services
 {
-    public class AmazonService
+    public class AmazonService : IAmazonService
     {
         private readonly IMongoCollection<Order> _amazonOrders;
 

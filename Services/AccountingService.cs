@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace MultiChannelSalesSync.Services
 {
-    public class AccountingService
+    public class AccountingService : IAccountingService
     {
         private readonly IMongoCollection<Transaction> _transactions;
 

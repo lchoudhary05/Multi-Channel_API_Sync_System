@@ -3,7 +3,7 @@ using MultiChannelSalesSync.Models;
 
 namespace MultiChannelSalesSync.Services
 {
-    public class InventoryService
+    public class InventoryService : IInventoryService
     {
         private readonly IMongoCollection<InventoryItem> _inventory;
 
@@ -16,8 +16,7 @@ namespace MultiChannelSalesSync.Services
         {
             var filter = Builders<InventoryItem>.Filter.Eq(i => i.Sku, sku);
             var update = Builders<InventoryItem>.Update.Inc(i => i.Quantity, -quantity);
-            var options = new UpdateOptions { IsUpsert = true };
-            _inventory.UpdateOne(filter, update, options);
+            _inventory.UpdateOne(filter, update, new UpdateOptions { IsUpsert = true });
         }
 
         public int? GetStock(string sku)

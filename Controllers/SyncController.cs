@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using MultiChannelSalesSync.Services;
+using MultiChannelSalesSync.Interfaces;
 
 namespace MultiChannelSalesSync.Controllers
 {
@@ -8,18 +8,18 @@ namespace MultiChannelSalesSync.Controllers
     [Route("[controller]")]
     public class SyncController : ControllerBase
     {
-        private readonly ShopifyService _shopify;
-        private readonly AmazonService _amazon;
-        private readonly InventoryService _inventory;
-        private readonly AccountingService _accounting;
-        private readonly LoggerService _logger;
+        private readonly IShopifyService _shopify;
+        private readonly IAmazonService _amazon;
+        private readonly IInventoryService _inventory;
+        private readonly IAccountingService _accounting;
+        private readonly ILoggerService _logger;
 
         public SyncController(
-            ShopifyService shopify,
-            AmazonService amazon,
-            InventoryService inventory,
-            AccountingService accounting,
-            LoggerService logger)
+            IShopifyService shopify,
+            IAmazonService amazon,
+            IInventoryService inventory,
+            IAccountingService accounting,
+            ILoggerService logger)
         {
             _shopify = shopify;
             _amazon = amazon;

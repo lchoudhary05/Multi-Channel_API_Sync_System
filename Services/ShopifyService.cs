@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MultiChannelSalesSync.Services
 {
-    public class ShopifyService
+    public class ShopifyService : IShopifyService
     {
         private readonly IMongoCollection<Order> _shopifyOrders;
 
