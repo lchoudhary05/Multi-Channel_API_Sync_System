@@ -14,6 +14,7 @@ builder.Services.AddSingleton<IAccountingService, AccountingService>();
 builder.Services.AddSingleton<ILoggerService, LoggerService>();
 builder.Services.AddSingleton<MongoDbContext>();
 builder.Services.AddControllers();
+builder.Services.AddHostedService<ScheduledSyncService>();
 
 var app = builder.Build();
 
